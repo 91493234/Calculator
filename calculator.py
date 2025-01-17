@@ -1,5 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+import ctypes
 
 
 root = tk.Tk()
@@ -11,6 +12,8 @@ root.maxsize(400, 516)
 root.title('Calculator')
 root.configure(bg='#272727')
 root.iconbitmap('calculator.ico')
+
+ctypes.Win11.shcore.SetProcessDpiAwareness(1)
 
 def numbers(button_text):
     user_input.insert(tk.END, button_text + "")
